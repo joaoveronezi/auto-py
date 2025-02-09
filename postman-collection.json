@@ -1,0 +1,197 @@
+{
+	"info": {
+		"_postman_id": "3ca1dae3-e7b9-40f3-a370-d5aacd6020a3",
+		"name": "Automata Python - Veronezi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10082580",
+		"_collection_link": "https://bold-star-331843.postman.co/workspace/Team-Workspace~cd0832d8-b6ab-4f66-8c57-5b3789f9bea7/collection/10082580-3ca1dae3-e7b9-40f3-a370-d5aacd6020a3?action=share&source=collection_link&creator=10082580"
+	},
+	"item": [
+		{
+			"name": "Turing Machine",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"states\": [\"q0\", \"q1\", \"q2\", \"qf\"],\n    \"input_symbols\": [\"0\", \"1\"],\n    \"tape_symbols\": [\"0\", \"1\", \"_\", \"X\", \"Y\"],\n    \"transitions\": {\n        \"q0,0\": [\"q1\", \"X\", \"R\"],\n        \"q1,1\": [\"q2\", \"Y\", \"L\"],\n        \"q2,X\": [\"qf\", \"X\", \"R\"]\n    },\n    \"initial_state\": \"q0\",\n    \"blank_symbol\": \"_\",\n    \"final_states\": [\"qf\"],\n    \"word\": \"01\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/turing-machine",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"turing-machine"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Turing Machine - Diagram",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"states\": [\"q0\", \"q1\", \"q2\", \"qf\"],\n    \"input_symbols\": [\"0\", \"1\"],\n    \"tape_symbols\": [\"0\", \"1\", \"_\", \"X\", \"Y\"],\n    \"transitions\": {\n        \"q0,0\": [\"q1\", \"X\", \"R\"],\n        \"q1,1\": [\"q2\", \"Y\", \"L\"],\n        \"q2,X\": [\"qf\", \"X\", \"R\"]\n    },\n    \"initial_state\": \"q0\",\n    \"blank_symbol\": \"_\",\n    \"final_states\": [\"qf\"],\n    \"word\": \"01\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/turing-machine/diagram/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"turing-machine",
+						"diagram",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pushdown Automata - PDA",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"states\": [\"q0\", \"q1\", \"qf\"],\n    \"input_symbols\": [\"a\", \"b\"],\n    \"stack_symbols\": [\"X\", \"Z\"],\n    \"transitions\": {\n        \"q0,a,Z\": [\"q0\", [\"X\", \"Z\"]],\n        \"q0,b,X\": [\"q1\", []],\n        \"q1,b,X\": [\"q1\", []],\n        \"q1,E,Z\": [\"qf\", [\"Z\"]]\n    },\n    \"initial_state\": \"q0\",\n    \"initial_stack_symbol\": \"Z\",\n    \"final_states\": [\"qf\"],\n    \"word\": \"aabb\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/pda",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"pda"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pushdown Automata - PDA - Diagram",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"states\": [\"q0\", \"q1\", \"qf\"],\n    \"input_symbols\": [\"a\", \"b\"],\n    \"stack_symbols\": [\"X\", \"Z\"],\n    \"transitions\": {\n        \"q0,a,Z\": [\"q0\", [\"X\", \"Z\"]],\n        \"q0,b,X\": [\"q1\", []],\n        \"q1,b,X\": [\"q1\", []],\n        \"q1,E,Z\": [\"qf\", [\"Z\"]]\n    },\n    \"initial_state\": \"q0\",\n    \"initial_stack_symbol\": \"Z\",\n    \"final_states\": [\"qf\"],\n    \"word\": \"aabb\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/pda/diagram/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"pda",
+						"diagram",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deterministic Finite Automata - DFA",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"states\": [\"q0\", \"q1\", \"q2\"],\n    \"input_symbols\": [\"0\", \"1\"],\n    \"transitions\": {\n        \"q0\": {\"0\": \"q0\", \"1\": \"q1\"},\n        \"q1\": {\"0\": \"q0\", \"1\": \"q2\"},\n        \"q2\": {\"0\": \"q2\", \"1\": \"q1\"}\n    },\n    \"initial_state\": \"q0\",\n    \"final_states\": [\"q1\"],\n    \"word\": \"1001\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/dfa",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"dfa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deterministic Finite Automata - DFA - Diagram",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"states\": [\"q0\", \"q1\", \"q2\"],\n    \"input_symbols\": [\"0\", \"1\"],\n    \"transitions\": {\n        \"q0\": {\"0\": \"q0\", \"1\": \"q1\"},\n        \"q1\": {\"0\": \"q0\", \"1\": \"q2\"},\n        \"q2\": {\"0\": \"q2\", \"1\": \"q1\"}\n    },\n    \"initial_state\": \"q0\",\n    \"final_states\": [\"q1\"],\n    \"word\": \"1001\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/dfa/diagram/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"dfa",
+						"diagram",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
